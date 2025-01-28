@@ -1,7 +1,7 @@
 // app/screens/BookingScreen.js
 
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 
 const BookingScreen = () => {
   const [pickupLocation, setPickupLocation] = useState('');
@@ -9,6 +9,7 @@ const BookingScreen = () => {
   const [vehicleType, setVehicleType] = useState('');
 
   const handleBooking = () => {
+    Alert.alert("Booking SuccessFully !")
     // Here you would typically call a service to create a booking
     console.log('Booking created:', { pickupLocation, dropoffLocation, vehicleType });
     // Reset form after booking
