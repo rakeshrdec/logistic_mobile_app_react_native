@@ -2,8 +2,10 @@
 
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const SignUpScreen = () => {
+  const navigation = useNavigation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -38,7 +40,7 @@ const SignUpScreen = () => {
         secureTextEntry
       />
       <Button title="Sign Up" onPress={handleSignUp} />
-      <Text style={styles.link} onPress={() => {/* Navigate to Sign In */}}>
+      <Text style={styles.link} onPress={() => {navigation.navigate('SignIn')}}>
         Already have an account? Sign In
       </Text>
     </View>
